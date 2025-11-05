@@ -24,7 +24,40 @@
 
         <div class="search-section" id="searchSection" style="display: none;">
             <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search by name, ID, vehicle, hotel...">
+            <button id="addDriverBtn" class="add-btn">➕ Add Driver</button>
             <button id="saveBtn" class="save-btn">💾 Save List</button>
+        </div>
+
+        <div id="addDriverModal" class="modal">
+            <div class="modal-content">
+                <h2>➕ Add New Driver</h2>
+                <form id="addDriverForm">
+                    <div class="form-group">
+                        <label for="captainCode">Captain Code</label>
+                        <input type="text" id="captainCode" name="captainCode" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="driverId">Driver Name</label>
+                        <input type="text" id="driverId" name="driverId" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleId">Vehicle ID</label>
+                        <input type="text" id="vehicleId" name="vehicleId" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNo">Phone Number</label>
+                        <input type="text" id="phoneNo" name="phoneNo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hotelName">Hotel Name</label>
+                        <input type="text" id="hotelName" name="hotelName" required>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" id="cancelAddBtn" class="btn-cancel">Cancel</button>
+                        <button type="submit" class="btn-submit">Add Driver</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <div id="contactList" class="contact-list"></div>
