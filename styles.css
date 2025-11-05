@@ -11,6 +11,7 @@ body {
     padding: 0;
     color: #c9d1d9;
     line-height: 1.5;
+    overflow-x: hidden;
 }
 
 .container {
@@ -392,6 +393,7 @@ header h1 {
 @media (max-width: 768px) {
     .container {
         padding: 16px 12px;
+        overflow-x: hidden;
     }
 
     header h1 {
@@ -408,6 +410,7 @@ header h1 {
     .drivers-table tbody {
         display: block;
         width: 100%;
+        overflow-x: hidden;
     }
 
     .drivers-table tbody tr {
@@ -417,6 +420,7 @@ header h1 {
         border-radius: 6px;
         margin-bottom: 12px;
         padding: 16px;
+        overflow-x: hidden;
     }
 
     .drivers-table tbody tr:hover {
@@ -431,6 +435,8 @@ header h1 {
         border: none;
         text-align: left;
         color: #c9d1d9;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .drivers-table tbody td::before {
