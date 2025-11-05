@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Contact Manager</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📋</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Driver Contact Manager</h1>
+        </header>
+
+        <div class="upload-section">
+            <label for="fileInput" class="upload-btn">
+                <span class="upload-icon">📁</span>
+                Choose Excel File
+            </label>
+            <input type="file" id="fileInput" accept=".xlsx, .xls" hidden>
+            <p class="file-name" id="fileName">No file selected</p>
+        </div>
+
+        <div class="search-section" id="searchSection" style="display: none;">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search by name, ID, vehicle, hotel...">
+            <button id="saveBtn" class="save-btn">💾 Save List</button>
+        </div>
+
+        <div id="contactList" class="contact-list"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
