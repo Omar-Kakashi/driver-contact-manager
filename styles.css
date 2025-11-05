@@ -474,15 +474,16 @@ header h1 {
     }
 
     .action-buttons {
-        width: 100%;
-        flex-direction: column;
+        width: 100% !important;
+        flex-direction: column !important;
         gap: 8px;
     }
 
     .btn {
-        width: 100%;
+        width: 100% !important;
         font-size: 14px;
         padding: 10px 12px;
+        justify-content: center;
     }
 
     .hotel-tag {

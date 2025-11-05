@@ -56,16 +56,18 @@ const initialDriversData = [
 let driversData = [];
 let filteredData = [];
 
-// File input handler
-document.getElementById('fileInput').addEventListener('change', handleFileUpload);
-document.getElementById('searchInput').addEventListener('input', handleSearch);
-document.getElementById('saveBtn').addEventListener('click', saveList);
-document.getElementById('addDriverBtn').addEventListener('click', showAddDriverForm);
-document.getElementById('cancelAddBtn').addEventListener('click', hideAddDriverForm);
-document.getElementById('addDriverForm').addEventListener('submit', handleAddDriver);
-
 // Load saved data on page load
 window.addEventListener('load', loadSavedData);
+
+// Event listeners - set after DOM loads
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('fileInput').addEventListener('change', handleFileUpload);
+    document.getElementById('searchInput').addEventListener('input', handleSearch);
+    document.getElementById('saveBtn').addEventListener('click', saveList);
+    document.getElementById('addDriverBtn').addEventListener('click', showAddDriverForm);
+    document.getElementById('cancelAddBtn').addEventListener('click', hideAddDriverForm);
+    document.getElementById('addDriverForm').addEventListener('submit', handleAddDriver);
+});
 
 function handleFileUpload(event) {
     const file = event.target.files[0];
@@ -135,11 +137,25 @@ function displayContacts() {
     
     const dataToDisplay = filteredData.length > 0 ? filteredData : driversData;
     
-    if (dataToDisplay.length === 0) {
+    if (driversData.length === 0) {
         contactList.innerHTML = `
             <div class="empty-state">
                 <h2>No contacts found</h2>
                 <p>Please upload an Excel file with driver information</p>
+            </div>
+        `;
+        return;
+    }
+    
+    // Check if search returned no results
+    const searchInput = document.getElementById('searchInput');
+    const isSearching = searchInput && searchInput.value.trim() !== '';
+    
+    if (isSearching && filteredData.length === 0) {
+        contactList.innerHTML = `
+            <div class="empty-state">
+                <h2>No drivers found</h2>
+                <p>Try a different search term</p>
             </div>
         `;
         return;
