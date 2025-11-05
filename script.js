@@ -162,15 +162,15 @@ function displayContacts() {
                 <tbody>
                     ${dataToDisplay.map((driver, index) => `
                         <tr>
-                            <td>${index + 1}</td>
-                            <td><strong>${driver.captainCode || 'N/A'}</strong></td>
-                            <td>${driver.driverId || 'N/A'}</td>
-                            <td>${driver.vehicleId || 'N/A'}</td>
-                            <td>${driver.originalPhone || 'N/A'}</td>
-                            <td><span class="hotel-tag">${driver.hotelName || 'N/A'}</span></td>
-                            <td>
+                            <td data-label="#">${index + 1}</td>
+                            <td data-label="Captain Code"><strong>${driver.captainCode || 'N/A'}</strong></td>
+                            <td data-label="Driver Name">${driver.driverId || 'N/A'}</td>
+                            <td data-label="Vehicle ID">${driver.vehicleId || 'N/A'}</td>
+                            <td data-label="Phone Number">${driver.originalPhone || 'N/A'}</td>
+                            <td data-label="Hotel Name"><span class="hotel-tag">${driver.hotelName || 'N/A'}</span></td>
+                            <td data-label="Actions">
                                 <div class="action-buttons">
-                                    <a href="tel:${driver.phoneNo}" class="btn btn-call" onclick="trackAction('call', '${driver.captainCode}')">
+                                    <a href="tel:+${driver.phoneNo}" class="btn btn-call" onclick="trackAction('call', '${driver.captainCode}')">
                                         📞 Call
                                     </a>
                                     <a href="https://wa.me/${driver.phoneNo}" target="_blank" class="btn btn-whatsapp" onclick="trackAction('whatsapp', '${driver.captainCode}')">

@@ -399,19 +399,87 @@ header h1 {
         padding: 0 12px;
     }
 
-    .drivers-table thead th,
+    /* Hide table on mobile and show cards instead */
+    .drivers-table thead {
+        display: none;
+    }
+
+    .drivers-table,
+    .drivers-table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    .drivers-table tbody tr {
+        display: block;
+        background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        margin-bottom: 12px;
+        padding: 16px;
+    }
+
+    .drivers-table tbody tr:hover {
+        background: #1c2128;
+    }
+
     .drivers-table tbody td {
-        padding: 10px 12px;
-        font-size: 13px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        border: none;
+        text-align: right;
+    }
+
+    .drivers-table tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #8b949e;
+        text-align: left;
+        flex-shrink: 0;
+        margin-right: 16px;
+    }
+
+    .drivers-table tbody td:first-child {
+        justify-content: center;
+        background: #0d1117;
+        border-radius: 4px;
+        padding: 6px;
+        margin-bottom: 12px;
+        font-size: 12px;
+        color: #8b949e;
+    }
+
+    .drivers-table tbody td:first-child::before {
+        content: "# ";
+        margin-right: 4px;
+    }
+
+    .drivers-table tbody td:last-child {
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid #30363d;
+    }
+
+    .drivers-table tbody td:last-child::before {
+        content: none;
     }
 
     .action-buttons {
-        flex-direction: column;
+        width: 100%;
+        flex-direction: row;
+        gap: 8px;
     }
 
     .btn {
-        font-size: 11px;
-        padding: 4px 10px;
+        flex: 1;
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .hotel-tag {
+        flex-shrink: 0;
     }
 }
 
