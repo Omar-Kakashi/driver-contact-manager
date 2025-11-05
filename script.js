@@ -56,17 +56,25 @@ const initialDriversData = [
 let driversData = [];
 let filteredData = [];
 
-// Load saved data on page load
-window.addEventListener('load', loadSavedData);
-
-// Event listeners - set after DOM loads
+// Wait for DOM to be fully loaded before initializing
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('fileInput').addEventListener('change', handleFileUpload);
-    document.getElementById('searchInput').addEventListener('input', handleSearch);
-    document.getElementById('saveBtn').addEventListener('click', saveList);
-    document.getElementById('addDriverBtn').addEventListener('click', showAddDriverForm);
-    document.getElementById('cancelAddBtn').addEventListener('click', hideAddDriverForm);
-    document.getElementById('addDriverForm').addEventListener('submit', handleAddDriver);
+    // Initialize data first
+    loadSavedData();
+    
+    // Then attach event listeners
+    const searchInput = document.getElementById('searchInput');
+    const fileInput = document.getElementById('fileInput');
+    const saveBtn = document.getElementById('saveBtn');
+    const addDriverBtn = document.getElementById('addDriverBtn');
+    const cancelAddBtn = document.getElementById('cancelAddBtn');
+    const addDriverForm = document.getElementById('addDriverForm');
+    
+    if (fileInput) fileInput.addEventListener('change', handleFileUpload);
+    if (searchInput) searchInput.addEventListener('input', handleSearch);
+    if (saveBtn) saveBtn.addEventListener('click', saveList);
+    if (addDriverBtn) addDriverBtn.addEventListener('click', showAddDriverForm);
+    if (cancelAddBtn) cancelAddBtn.addEventListener('click', hideAddDriverForm);
+    if (addDriverForm) addDriverForm.addEventListener('submit', handleAddDriver);
 });
 
 function handleFileUpload(event) {
