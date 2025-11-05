@@ -469,30 +469,37 @@ header h1 {
 
     /* Last cell (actions) */
     .drivers-table tbody td:last-child {
-        display: block;
+        display: block !important;
         margin-top: 12px;
         padding-top: 16px;
         border-top: 1px solid #30363d;
+        grid-template-columns: none !important;
+        width: 100%;
     }
 
     .drivers-table tbody td:last-child::before {
+        display: none !important;
         content: none;
     }
 
     .action-buttons {
         width: 100% !important;
+        max-width: 100% !important;
         flex-direction: column !important;
         gap: 8px;
-        display: flex;
+        display: flex !important;
     }
 
     .btn {
         width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
         font-size: 12px;
         padding: 8px 10px;
         justify-content: center;
-        box-sizing: border-box;
-        display: flex;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-shrink: 1;
     }
 
     .hotel-tag {
