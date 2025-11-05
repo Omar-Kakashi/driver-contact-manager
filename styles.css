@@ -475,14 +475,14 @@ header h1 {
 
     .action-buttons {
         width: 100%;
-        flex-direction: row;
+        flex-direction: column;
         gap: 8px;
     }
 
     .btn {
-        flex: 1;
-        font-size: 13px;
-        padding: 8px 12px;
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 12px;
     }
 
     .hotel-tag {
