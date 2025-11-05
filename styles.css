@@ -430,6 +430,7 @@ header h1 {
         padding: 10px 0;
         border: none;
         text-align: left;
+        color: #c9d1d9;
     }
 
     .drivers-table tbody td::before {
@@ -437,6 +438,10 @@ header h1 {
         font-weight: 600;
         color: #8b949e;
         text-align: left;
+    }
+
+    .drivers-table tbody td strong {
+        color: #58a6ff;
     }
 
     /* First cell (number) */
@@ -482,66 +487,5 @@ header h1 {
 
     .hotel-tag {
         width: fit-content;
-    }
-}
-
-.empty-state {
-    text-align: center;
-    padding: 60px 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-.empty-state h2 {
-    font-size: 18px;
-    margin-bottom: 8px;
-    color: rgba(0, 0, 0, 0.85);
-}
-
-.empty-state p {
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.45);
-}
-
-@media (max-width: 1200px) {
-    .table-container {
-        overflow-x: auto;
-    }
-    
-    .drivers-table {
-        min-width: 1000px;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        padding: 12px;
-    }
-
-    header {
-        padding: 16px;
-    }
-
-    header h1 {
-        font-size: 20px;
-    }
-
-    .search-section {
-        padding: 12px;
-    }
-
-    .drivers-table thead th,
-    .drivers-table tbody td {
-        padding: 12px 8px;
-    }
-
-    .action-buttons {
-        flex-direction: column;
-    }
-
-    .btn {
-        font-size: 12px;
-        padding: 5px 10px;
     }
 }
