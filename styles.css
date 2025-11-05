@@ -469,11 +469,10 @@ header h1 {
 
     /* Last cell (actions) */
     .drivers-table tbody td:last-child {
-        grid-template-columns: 1fr;
+        display: block;
         margin-top: 12px;
         padding-top: 16px;
         border-top: 1px solid #30363d;
-        overflow: visible;
     }
 
     .drivers-table tbody td:last-child::before {
@@ -484,6 +483,7 @@ header h1 {
         width: 100% !important;
         flex-direction: column !important;
         gap: 8px;
+        display: flex;
     }
 
     .btn {
@@ -492,7 +492,7 @@ header h1 {
         padding: 8px 10px;
         justify-content: center;
         box-sizing: border-box;
-        max-width: 100%;
+        display: flex;
     }
 
     .hotel-tag {
